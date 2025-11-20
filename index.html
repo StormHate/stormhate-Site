@@ -9,7 +9,7 @@
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
     body{background:#0f0f0f;color:#eee;overflow-x:hidden;position:relative;}
 
-    /* ==== Effet néon plus fort sur les bords ==== */
+    /* ==== Effet néon bordures ==== */
     body::before, body::after {
       content:'';
       position:fixed;
@@ -27,49 +27,118 @@
     }
 
     /* ==== MENU ==== */
-    nav{position:fixed;top:0;left:0;right:0;padding:15px 40px;display:flex;justify-content:center;gap:50px;background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);z-index:20;} 
-    nav a{color:#eee;text-decoration:none;font-weight:600;transition:.3s;font-size:1.1rem;} 
-    nav a:hover{color:#00d4ff;transform:scale(1.05);} 
+    nav{
+      position:fixed;top:0;left:0;right:0;
+      padding:15px 40px;
+      display:flex;justify-content:center;gap:50px;
+      background:rgba(0,0,0,0.75);backdrop-filter:blur(6px);
+      z-index:20;
+    }
+    nav a{color:#eee;text-decoration:none;font-weight:600;transition:.3s;font-size:1.1rem;}
+    nav a:hover{color:#00d4ff;transform:scale(1.05);}
 
     /* ==== HEADER ==== */
-    header{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;z-index:2;}
-    header h1{font-size:4.5rem;font-weight:700;text-shadow:0 0 30px #00d4ff, 0 0 50px #00d4ff;} 
-    header p{margin-top:15px;color:#ccc;font-size:1.3rem;} 
+    header{
+      height:100vh;display:flex;flex-direction:column;
+      justify-content:center;align-items:center;text-align:center;
+      position:relative;z-index:2;
+    }
+    header h1{
+      font-size:4.5rem;font-weight:700;
+      text-shadow:0 0 30px #00d4ff, 0 0 50px #00d4ff;
+    }
+    header p{margin-top:15px;color:#ccc;font-size:1.3rem;}
 
     /* ==== FORMES ANIMÉES ==== */
-    .shape{position:absolute;border-radius:50%;opacity:.25;background:linear-gradient(135deg,#00d4ff,#004b78);filter:blur(6px);animation:float 8s infinite ease-in-out;z-index:2;} 
-    .shape1{width:220px;height:220px;top:15%;left:10%;animation-delay:0s;} 
-    .shape2{width:300px;height:300px;top:55%;left:70%;animation-delay:2s;} 
-    .shape3{width:150px;height:150px;top:30%;left:45%;animation-delay:4s;} 
+    .shape{
+      position:absolute;border-radius:50%;opacity:.25;
+      background:linear-gradient(135deg,#00d4ff,#004b78);
+      filter:blur(6px);animation:float 8s infinite ease-in-out;z-index:2;
+    }
+    .shape1{width:220px;height:220px;top:15%;left:10%;animation-delay:0s;}
+    .shape2{width:300px;height:300px;top:55%;left:70%;animation-delay:2s;}
+    .shape3{width:150px;height:150px;top:30%;left:45%;animation-delay:4s;}
 
-    @keyframes float{0%{transform:translateY(0);}50%{transform:translateY(-30px);}100%{transform:translateY(0);}} 
+    @keyframes float{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-30px);}
+      100%{transform:translateY(0);}
+    }
 
     /* ==== SECTIONS ==== */
-    section{padding:120px 20px;max-width:1100px;margin:auto;position:relative;z-index:2;} 
-    section h2{text-align:center;font-size:2.7rem;color:#00d4ff;margin-bottom:60px;} 
+    section{
+      padding:120px 20px;
+      max-width:1100px;
+      margin:auto;
+      position:relative;
+      z-index:2;
+    }
+    section h2{
+      text-align:center;font-size:2.7rem;
+      color:#00d4ff;margin-bottom:60px;
+    }
 
     /* ==== SERVICES ==== */
-    .services{display:flex;flex-wrap:wrap;gap:35px;justify-content:center;} 
-    .service{background:#1a1a1a;padding:35px;border-radius:20px;flex:1 1 260px;text-align:center;box-shadow:0 0 20px rgba(0,212,255,0.5);transition:.3s;} 
-    .service:hover{transform:translateY(-6px);box-shadow:0 0 40px rgba(0,212,255,0.8);} 
-    .service h3{font-size:1.6rem;margin-bottom:10px;} 
-    .service p{color:#ccc;font-size:1.1rem;} 
+    .services{
+      display:flex;flex-wrap:wrap;gap:35px;
+      justify-content:center;
+    }
+    .service{
+      background:#1a1a1a;padding:35px;border-radius:20px;
+      flex:1 1 260px;text-align:center;
+      box-shadow:0 0 20px rgba(0,212,255,0.5);
+      transition:.3s;
+    }
+    .service:hover{
+      transform:translateY(-6px);
+      box-shadow:0 0 40px rgba(0,212,255,0.8);
+    }
+    .service h3{font-size:1.6rem;margin-bottom:10px;}
+    .service p{color:#ccc;font-size:1.1rem;}
+
+    /* ==== PORTFOLIO ==== */
+    .portfolio-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+    .video-box {
+      background: #1a1a1a;
+      padding: 15px;
+      border-radius: 15px;
+      width: 320px;
+      box-shadow: 0 0 15px rgba(0,212,255,0.4);
+      transition: .3s;
+    }
+    .video-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px rgba(0,212,255,0.7);
+    }
+    .video-box video {
+      width: 100%;
+      border-radius: 10px;
+    }
 
     /* ==== CONTACTS ==== */
-    .contacts{text-align:center;position:relative;z-index:2;} 
+    .contacts{text-align:center;position:relative;z-index:2;}
     .contacts p{font-size:1.3rem;color:#eee;display:flex;align-items:center;gap:10px;justify-content:center;}
-    .contact-button{display:inline-block;background:#00d4ff;color:#000;padding:15px 35px;border-radius:14px;text-decoration:none;font-weight:700;margin:10px;transition:.3s;} 
-    .contact-button:hover{background:#008bb3;color:#fff;} 
+    .contact-button{
+      display:inline-block;background:#00d4ff;color:#000;
+      padding:15px 35px;border-radius:14px;text-decoration:none;
+      font-weight:700;margin:10px;transition:.3s;
+    }
+    .contact-button:hover{background:#008bb3;color:#fff;}
 
     /* ==== FOOTER ==== */
-    footer{text-align:center;padding:40px;color:#777;font-size:.9rem;position:relative;z-index:2;} 
-
+    footer{text-align:center;padding:40px;color:#777;font-size:.9rem;position:relative;z-index:2;}
   </style>
 </head>
 <body>
 
 <nav>
   <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
   <a href="#explications">À propos</a>
   <a href="#contacts">Contacts</a>
 </nav>
@@ -87,7 +156,7 @@
   <div class="services">
     <div class="service">
       <h3>Montage Gaming</h3>
-      <p>20€ / vidéo</p>
+      <p>~20€ / selon le type de vidéo </p>
     </div>
     <div class="service">
       <h3>Reels / Shorts</h3>
@@ -96,6 +165,15 @@
     <div class="service">
       <h3>Montages personnalisés</h3>
       <p>Sur devis</p>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="portfolio-grid">
+    <div class="video-box">
+      <video src="videos/ma_video.mp4" controls></video>
     </div>
   </div>
 </section>
